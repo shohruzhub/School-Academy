@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>School Academy — Learn Without Limits</title>
+
+  <meta
+    name="description"
+    content="School Academy is a fictional online learning platform for students."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        <div class="logo-icon">SA</div>
+        <span>School Academy</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#courses">Courses</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a
+        class="login-button"
+        href="https://YOUR-SHOKHRUZ-CHAT-URL.com"
+      >
+        Log In
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          🎓 YOUR LEARNING JOURNEY STARTS HERE
+        </div>
+
+        <h1>
+          Learn today.<br>
+          <span>Build your future.</span>
+        </h1>
+
+        <p>
+          Explore engaging courses, track your progress,
+          complete lessons, and build skills at your own pace.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#courses" class="primary-button">
+            Start Learning →
+          </a>
+
+          <a
+            href="https://YOUR-SHOKHRUZ-CHAT-URL.com"
+            class="secondary-button"
+          >
+            Log In
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div class="stat">
+            <strong>50+</strong>
+            <span>Lessons</span>
+          </div>
+
+          <div class="stat">
+            <strong>5</strong>
+            <span>Subjects</span>
+          </div>
+
+          <div class="stat">
+            <strong>∞</strong>
+            <span>Ways to Learn</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Learning Dashboard Preview -->
+      <div class="hero-card">
+
+        <div class="dashboard-top">
+
+          <div>
+            <span class="small-label">STUDENT DASHBOARD</span>
+            <h3>Welcome back! 👋</h3>
+          </div>
+
+          <div class="profile-circle">
+            S
+          </div>
+
+        </div>
+
+
+        <div class="progress-card">
+
+          <div class="progress-header">
+            <span>Weekly Progress</span>
+            <strong>72%</strong>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+
+          <p>You're doing great. Keep learning!</p>
+
+        </div>
+
+
+        <div class="mini-courses">
+
+          <div class="mini-course">
+            <div class="course-icon math">∑</div>
+
+            <div>
+              <strong>Mathematics</strong>
+              <span>8 / 12 lessons</span>
+            </div>
+
+            <b>67%</b>
+          </div>
+
+
+          <div class="mini-course">
+            <div class="course-icon science">⚗</div>
+
+            <div>
+              <strong>Science</strong>
+              <span>6 / 10 lessons</span>
+            </div>
+
+            <b>60%</b>
+          </div>
+
+
+          <div class="mini-course">
+            <div class="course-icon coding">&lt;/&gt;</div>
+
+            <div>
+              <strong>Computer Science</strong>
+              <span>9 / 12 lessons</span>
+            </div>
+
+            <b>75%</b>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Trusted / Feature Strip -->
+    <section class="feature-strip">
+
+      <div class="feature">
+        <div class="feature-icon">📚</div>
+        <div>
+          <strong>Learn at your pace</strong>
+          <span>Study whenever you're ready.</span>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <div>
+          <strong>Track your progress</strong>
+          <span>See how far you've come.</span>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <div>
+          <strong>Earn achievements</strong>
+          <span>Celebrate every milestone.</span>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Courses -->
+    <section class="courses-section" id="courses">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">EXPLORE</span>
+
+          <h2>
+            Find something<br>
+            <span>you want to learn.</span>
+          </h2>
+        </div>
+
+        <p>
+          Choose a subject and start building
+          your knowledge one lesson at a time.
+        </p>
+
+      </div>
+
+
+      <div class="course-grid">
+
+        <!-- Mathematics -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon math">∑</div>
+            <span class="course-level">BEGINNER</span>
+          </div>
+
+          <h3>Mathematics</h3>
+
+          <p>
+            Numbers, algebra, geometry, equations,
+            and problem-solving.
+          </p>
+
+          <div class="course-bottom">
+            <span>12 Lessons</span>
+            <button onclick="showCourse('Mathematics')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- Science -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon science">⚗</div>
+            <span class="course-level">BEGINNER</span>
+          </div>
+
+          <h3>Science</h3>
+
+          <p>
+            Discover physics, chemistry, biology,
+            experiments, and more.
+          </p>
+
+          <div class="course-bottom">
+            <span>10 Lessons</span>
+            <button onclick="showCourse('Science')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- English -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon english">A</div>
+            <span class="course-level">ALL LEVELS</span>
+          </div>
+
+          <h3>English</h3>
+
+          <p>
+            Improve reading, writing, grammar,
+            vocabulary, and communication.
+          </p>
+
+          <div class="course-bottom">
+            <span>14 Lessons</span>
+            <button onclick="showCourse('English')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- Computer Science -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon coding">&lt;/&gt;</div>
+            <span class="course-level">BEGINNER</span>
+          </div>
+
+          <h3>Computer Science</h3>
+
+          <p>
+            Learn programming, algorithms,
+            websites, and computer fundamentals.
+          </p>
+
+          <div class="course-bottom">
+            <span>12 Lessons</span>
+            <button onclick="showCourse('Computer Science')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- History -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon history">⌛</div>
+            <span class="course-level">ALL LEVELS</span>
+          </div>
+
+          <h3>History</h3>
+
+          <p>
+            Explore civilizations, important events,
+            discoveries, and historical ideas.
+          </p>
+
+          <div class="course-bottom">
+            <span>11 Lessons</span>
+            <button onclick="showCourse('History')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- Study Skills -->
+        <article class="course-card">
+
+          <div class="course-top">
+            <div class="large-course-icon skills">★</div>
+            <span class="course-level">ALL LEVELS</span>
+          </div>
+
+          <h3>Study Skills</h3>
+
+          <p>
+            Build better study habits, organization,
+            focus, and learning strategies.
+          </p>
+
+          <div class="course-bottom">
+            <span>8 Lessons</span>
+            <button onclick="showCourse('Study Skills')">
+              Explore →
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+
+      <div class="section-heading centered">
+
+        <span class="section-label">HOW IT WORKS</span>
+
+        <h2>
+          Learning made <span>simple.</span>
+        </h2>
+
+        <p>
+          School Academy helps you turn small study
+          sessions into real progress.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">01</div>
+
+          <h3>Choose a subject</h3>
+
+          <p>
+            Pick a course that interests you
+            and start exploring.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">02</div>
+
+          <h3>Complete lessons</h3>
+
+          <p>
+            Learn new concepts through
+            simple lessons and activities.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">03</div>
+
+          <h3>Track your progress</h3>
+
+          <p>
+            Watch your progress grow as
+            you complete more lessons.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section" id="about">
+
+      <div class="cta-card">
+
+        <div>
+
+          <span class="section-label">READY TO START?</span>
+
+          <h2>
+            Your next lesson<br>
+            is waiting.
+          </h2>
+
+          <p>
+            Start exploring School Academy
+            and discover something new.
+          </p>
+
+        </div>
+
+        <a
+          href="https://YOUR-SHOKHRUZ-CHAT-URL.com"
+          class="primary-button"
+        >
+          Log In →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          <div class="logo-icon">SA</div>
+          <span>School Academy</span>
+        </div>
+
+        <p>
+          Learn. Grow. Build your future.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#courses">Courses</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      <span>© 2026 School Academy</span>
+      <span>Fictional educational platform</span>
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
