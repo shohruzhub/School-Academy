@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Dashboard — School Academy</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .dashboard-page {
+      min-height: 100vh;
+      background: #f7f9fc;
+    }
+
+    .dashboard-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 45px 24px 80px;
+    }
+
+    .dashboard-welcome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .dashboard-welcome h1 {
+      font-size: 38px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+
+    .dashboard-welcome p {
+      color: #667085;
+      margin-top: 7px;
+      font-size: 14px;
+    }
+
+    .dashboard-profile {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #315bea;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 18px;
+    }
+
+    .dashboard-card {
+      background: white;
+      border: 1px solid #e4e8ef;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .dashboard-card h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .dashboard-card-subtitle {
+      color: #667085;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    .overall-progress {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .progress-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #315bea 0 72%,
+        #e5e9f0 72% 100%
+      );
+
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .progress-circle-inner {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .progress-info strong {
+      font-size: 21px;
+    }
+
+    .progress-info p {
+      color: #667085;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .course-progress {
+      margin-top: 22px;
+    }
+
+    .course-row {
+      display: grid;
+      grid-template-columns: 40px 1fr 45px;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .course-row-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .course-row-info strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .course-row-info span {
+      color: #8993a4;
+      font-size: 10px;
+    }
+
+    .mini-progress {
+      height: 6px;
+      background: #e6eaf0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .mini-progress div {
+      height: 100%;
+      background: #315bea;
+      border-radius: inherit;
+    }
+
+    .course-percent {
+      color: #315bea;
+      font-size: 11px;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .quick-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .quick-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px;
+
+      background: #f7f9fc;
+      border: 1px solid #e7ebf1;
+      border-radius: 12px;
+
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .quick-action:hover {
+      transform: translateY(-2px);
+      border-color: #ccd4e0;
+    }
+
+    .quick-action-left {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .quick-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: #e9efff;
+    }
+
+    .quick-action strong {
+      font-size: 12px;
+    }
+
+    .quick-action span {
+      display: block;
+      color: #8993a4;
+      font-size: 10px;
+    }
+
+    .achievement-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 17px;
+    }
+
+    .achievement {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f7f9fc;
+    }
+
+    .achievement-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: #fff5d9;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .achievement strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .achievement span {
+      color: #8993a4;
+      font-size: 10px;
+    }
+
+    .activity-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .activity {
+      display: flex;
+      gap: 12px;
+    }
+
+    .activity-dot {
+      width: 9px;
+      height: 9px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: #315bea;
+      flex-shrink: 0;
+    }
+
+    .activity strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .activity span {
+      color: #8993a4;
+      font-size: 10px;
+    }
+
+    .dashboard-logout {
+      margin-top: 25px;
+      display: inline-block;
+      color: #667085;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .dashboard-logout:hover {
+      color: #315bea;
+    }
+
+    @media (max-width: 800px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-welcome h1 {
+        font-size: 31px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .dashboard-container {
+        padding: 30px 18px 60px;
+      }
+
+      .overall-progress {
+        align-items: flex-start;
+      }
+
+      .progress-circle {
+        width: 80px;
+        height: 80px;
+      }
+
+      .progress-circle-inner {
+        width: 61px;
+        height: 61px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="dashboard-page">
+
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="nav-container">
+
+        <a href="index.html" class="logo">
+          <div class="logo-icon">SA</div>
+          <span>School Academy</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#courses">Courses</a>
+        </nav>
+
+        <div class="dashboard-profile">S</div>
+
+      </div>
+    </header>
+
+
+    <!-- Dashboard -->
+    <main class="dashboard-container">
+
+      <div class="dashboard-welcome">
+
+        <div>
+          <span class="section-label">STUDENT DASHBOARD</span>
+
+          <h1>Welcome back! 👋</h1>
+
+          <p>
+            Keep learning and make progress toward your goals.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="dashboard-grid">
+
+        <!-- LEFT COLUMN -->
+
+        <div>
+
+          <!-- Overall Progress -->
+          <section class="dashboard-card">
+
+            <h2>Your Progress</h2>
+
+            <p class="dashboard-card-subtitle">
+              Here's how you're doing across your courses.
+            </p>
+
+            <div class="overall-progress">
+
+              <div class="progress-circle">
+                <div class="progress-circle-inner">
+                  72%
+                </div>
+              </div>
+
+              <div class="progress-info">
+
+                <strong>Great progress!</strong>
+
+                <p>
+                  You've completed 35 lessons.
+                  Keep going to reach your next milestone.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="course-progress">
+
+              <div class="course-row">
+
+                <div class="course-row-icon math">
+                  ∑
+                </div>
+
+                <div class="course-row-info">
+                  <strong>Mathematics</strong>
+                  <span>8 of 12 lessons</span>
+
+                  <div class="mini-progress">
+                    <div style="width: 67%;"></div>
+                  </div>
+                </div>
+
+                <div class="course-percent">
+                  67%
+                </div>
+
+              </div>
+
+
+              <div class="course-row">
+
+                <div class="course-row-icon science">
+                  ⚗
+                </div>
+
+                <div class="course-row-info">
+                  <strong>Science</strong>
+                  <span>6 of 10 lessons</span>
+
+                  <div class="mini-progress">
+                    <div style="width: 60%;"></div>
+                  </div>
+                </div>
+
+                <div class="course-percent">
+                  60%
+                </div>
+
+              </div>
+
+
+              <div class="course-row">
+
+                <div class="course-row-icon coding">
+                  &lt;/&gt;
+                </div>
+
+                <div class="course-row-info">
+                  <strong>Computer Science</strong>
+                  <span>9 of 12 lessons</span>
+
+                  <div class="mini-progress">
+                    <div style="width: 75%;"></div>
+                  </div>
+                </div>
+
+                <div class="course-percent">
+                  75%
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- Recent Activity -->
+          <section class="dashboard-card" style="margin-top: 18px;">
+
+            <h2>Recent Activity</h2>
+
+            <p class="dashboard-card-subtitle">
+              Your latest learning activity.
+            </p>
+
+            <div class="activity-list">
+
+              <div class="activity">
+                <div class="activity-dot"></div>
+
+                <div>
+                  <strong>Completed Algebra Basics</strong>
+                  <span>Mathematics · 2 hours ago</span>
+                </div>
+              </div>
+
+
+              <div class="activity">
+                <div class="activity-dot"></div>
+
+                <div>
+                  <strong>Started Introduction to Physics</strong>
+                  <span>Science · Yesterday</span>
+                </div>
+              </div>
+
+
+              <div class="activity">
+                <div class="activity-dot"></div>
+
+                <div>
+                  <strong>Completed your first coding challenge</strong>
+                  <span>Computer Science · 2 days ago</span>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div>
+
+          <!-- Quick Actions -->
+          <section class="dashboard-card">
+
+            <h2>Quick Actions</h2>
+
+            <p class="dashboard-card-subtitle">
+              Jump back into your learning.
+            </p>
+
+            <div class="quick-actions">
+
+              <div
+                class="quick-action"
+                onclick="dashboardMessage('Courses')"
+              >
+
+                <div class="quick-action-left">
+
+                  <div class="quick-icon">
+                    📚
+                  </div>
+
+                  <div>
+                    <strong>My Courses</strong>
+                    <span>Continue learning</span>
+                  </div>
+
+                </div>
+
+                <span>→</span>
+
+              </div>
+
+
+              <div
+                class="quick-action"
+                onclick="dashboardMessage('Assignments')"
+              >
+
+                <div class="quick-action-left">
+
+                  <div class="quick-icon">
+                    📝
+                  </div>
+
+                  <div>
+                    <strong>Assignments</strong>
+                    <span>View your work</span>
+                  </div>
+
+                </div>
+
+                <span>→</span>
+
+              </div>
+
+
+              <div
+                class="quick-action"
+                onclick="dashboardMessage('Achievements')"
+              >
+
+                <div class="quick-action-left">
+
+                  <div class="quick-icon">
+                    🏆
+                  </div>
+
+                  <div>
+                    <strong>Achievements</strong>
+                    <span>View your badges</span>
+                  </div>
+
+                </div>
+
+                <span>→</span>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- Achievements -->
+          <section class="dashboard-card" style="margin-top: 18px;">
+
+            <h2>Achievements</h2>
+
+            <p class="dashboard-card-subtitle">
+              Milestones you've reached.
+            </p>
+
+            <div class="achievement-list">
+
+              <div class="achievement">
+
+                <div class="achievement-icon">
+                  🔥
+                </div>
+
+                <div>
+                  <strong>7 Day Streak</strong>
+                  <span>Learned for 7 days in a row</span>
+                </div>
+
+              </div>
+
+
+              <div class="achievement">
+
+                <div class="achievement-icon">
+                  ⭐
+                </div>
+
+                <div>
+                  <strong>First Steps</strong>
+                  <span>Completed your first lesson</span>
+                </div>
+
+              </div>
+
+
+              <div class="achievement">
+
+                <div class="achievement-icon">
+                  🧠
+                </div>
+
+                <div>
+                  <strong>Quick Learner</strong>
+                  <span>Completed 10 lessons</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </div>
+
+
+      <a href="index.html" class="dashboard-logout">
+        ← Back to School Academy
+      </a>
+
+    </main>
+
+  </div>
+
+
+  <script>
+    function dashboardMessage(section) {
+      alert(
+        `${section}\n\nThis section is coming soon!`
+      );
+    }
+  </script>
+
+</body>
+</html>
